@@ -84,7 +84,7 @@ function MyTabLine()
                         elseif getbufvar( b, "&buftype" ) == 'quickfix'
                                 let n .= '[Q]'
                         else
-                                let n .= Relpath(bufname(b))
+                                let n .= pathshorten(Relpath(bufname(b)))
                         endif
                         " check and ++ tab's &modified count
                         if getbufvar( b, "&modified" )
