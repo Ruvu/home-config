@@ -1,0 +1,16 @@
+## http://stackoverflow.com/questions/987142/make-gitignore-ignore-everything-except-a-few-files ##
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!script.pl
+!template.latex
+!.vim
+!.gitmodules
+!.tmux.conf
+!.vimrc
+# etc...
+
+# ...even if they are in subdirectories
+!*/
