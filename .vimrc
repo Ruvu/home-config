@@ -28,6 +28,8 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+"Add column width indicator
+set colorcolumn=80
 
 "set pastetoggle=<F2>
 set pastetoggle=zp
@@ -265,6 +267,7 @@ syntax enable
 
 try
     colorscheme slate
+
 catch
 endtry
 
@@ -297,19 +300,19 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-"set tabstop=4
+" Set tabs with spaces
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=0
 
 set ai "Auto indent
 set si "Smart indent
@@ -398,4 +401,5 @@ endfunction
 
 
 hi MatchParen ctermbg=blue guibg=lightblue
-"
+" change comment color
+highlight Comment ctermfg=White
