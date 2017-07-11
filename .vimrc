@@ -309,6 +309,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+autocmd FileType python setlocal shiftwidth=4
+autocmd FileType python setlocal softtabstop=4
 
 " Linebreak on 500 characters
 set lbr
