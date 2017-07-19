@@ -69,7 +69,7 @@ else
 }
 $cpus .= " ($load)";
 
-print "\n$hostname\n";
+print "$hostname\n";
 print "$ver $arch\n";
 print "$uptime\n";
 print "CPUs: $cpus\n";
