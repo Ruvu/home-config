@@ -5,6 +5,3 @@
   interactive = auto
   ui = true
   pager = true
-[user]
-	name = WagnerRyan
-	email = rdw@rincon.com
