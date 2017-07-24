@@ -1,5 +1,6 @@
 alias ls='ls --human-readable --color=always'
-alias less='less -r'
+alias grep='grep --color=always'
+alias less='less -R'
 alias mkdir='mkdir --parents'
 
 # Prompt
