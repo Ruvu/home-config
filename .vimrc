@@ -42,6 +42,10 @@ vnoremap ; :
 command -nargs=1 -complete=buffer SV :vert sb
 command -nargs=1 -complete=buffer SH :sb
 
+" Provide path for jsl (will have to build manually)
+let g:syntastic_jsl_exec='~/.vim/my_stuff/jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl'
+let g:syntastic_javascript_checkers = ['jsl']
+
 " map shortcut to exporer
 nmap <silent> <Leader>e :Explore<CR>
 
@@ -72,7 +76,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 "Add column width indicator
-set colorcolumn=80
+set colorcolumn=100
 
 "set pastetoggle=<F2>
 set pastetoggle=zp
