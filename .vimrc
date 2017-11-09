@@ -1,8 +1,51 @@
 execute pathogen#infect()
 
+" allow buffers to be unopened and modified set hidden
+set hidden
+
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
+"" easier buffer movement
+" switch between buffers
+nnoremap <silent> <space>p :bprevious<CR>
+nnoremap <silent> <space>n :bnext<CR>
+" toggle last two buffers
+nnoremap <space>u <c-^>
+" list buffers
+nnoremap <space>a :ls<CR>
+" open a different buffer
+nnoremap <space>o :b 
+" switch to last buffer
+nnoremap <space><space> :b #<CR> 
+
+" switch windows using space hjkl
+nnoremap <silent> <space>h <C-w>h
+nnoremap <silent> <space>j <C-w>j
+nnoremap <silent> <space>k <C-w>k
+nnoremap <silent> <space>l <C-w>l
+
+" open a vertical split
+nnoremap <silent> <space>v :vs<CR>
+
+" use space d to close a buffer and replace with previous
+nmap <space>d :bp\|bd #<CR>
+
+" use semicolon for commands
+nnoremap ; :
+vnoremap ; :
+
+" Use :SV and :SH to open buffers in new window
+command -nargs=1 -complete=buffer SV :vert sb
+command -nargs=1 -complete=buffer SH :sb
+
 " map shortcut to exporer
 nmap <silent> <Leader>e :Explore<CR>
 
+" use ctrl h,l to switch tabs
 noremap <C-h> :tabprevious<CR>
 noremap <C-l> :tabnext<CR>
 
@@ -35,9 +78,9 @@ set colorcolumn=80
 set pastetoggle=zp
 set showmode
 
-"set foldmethod=indent
-set foldmethod=syntax
-set foldlevelstart=1
+set foldmethod=indent
+"set foldmethod=syntax
+set foldlevelstart=99
 
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
