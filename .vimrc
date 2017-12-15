@@ -1,5 +1,8 @@
 execute pathogen#infect()
 
+" Get the submodules:
+" git submodule update --init --recursive
+
 " allow buffers to be unopened and modified set hidden
 set hidden
 
