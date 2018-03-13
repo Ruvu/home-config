@@ -12,6 +12,12 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
+" Avoid redraw on every entered character by turning off Arabic 
+" shaping (which is implemented poorly)
+if has('arabic')
+    set noarabicshape
+endif
+
 "" easier buffer movement
 " switch between buffers
 nnoremap <silent> <space>p :bprevious<CR>
@@ -46,8 +52,11 @@ command -nargs=1 -complete=buffer SV :vert sb
 command -nargs=1 -complete=buffer SH :sb
 
 " Provide path for jsl (will have to build manually)
-let g:syntastic_jsl_exec='~/.vim/my_stuff/jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl'
+let g:syntastic_javascript_jsl_exec='~/.vim/my_stuff/jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl'
 let g:syntastic_javascript_checkers = ['jsl']
+
+" Enable php checker
+let g:syntastic_php_checkers = ['jsl']
 
 " map shortcut to exporer
 nmap <silent> <Leader>e :Explore<CR>
