@@ -66,8 +66,11 @@ noremap <C-h> :tabprevious<CR>
 noremap <C-l> :tabnext<CR>
 
 " remap window scrolling
-map <c-j> <c-e>
-map <c-k> <c-y>
+" (get rid of vim-latex maps first)                                                                 
+imap <C-g> <Plug>IMAP_JumpForward
+nmap <C-g> <Plug>IMAP_JumpForward
+nnoremap <C-j> <C-e>
+nnoremap <C-k> <C-y>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
