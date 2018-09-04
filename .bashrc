@@ -13,7 +13,16 @@ alias gitm='git merge origin master'
 alias gitp='git push origin master'
 
 # Prompt
-PS1="\u@\h \w > "
+#PS1="\u@\h \w > "
+# Git prompt
+source ~/.bin/git-prompt.sh
+PROMPT_COMMAND='__git_ps1 "\u@\h \w" " > "'
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
+
+# Git completion
+source /etc/bash_completion.d/git
 
 # Add /usr/local/lib to the library path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
