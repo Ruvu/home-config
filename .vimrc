@@ -6,6 +6,9 @@ execute pathogen#infect()
 " allow buffers to be unopened and modified set hidden
 set hidden
 
+" Disable auto comment
+au FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Persistent undo
 set undofile
 set undodir=$HOME/.vim/undo
@@ -223,9 +226,6 @@ function MyTabLine()
         endif
         return s
 endfunction
-
-" Disable auto comment
-set formatoptions-=cro
     
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
