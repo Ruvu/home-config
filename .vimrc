@@ -3,6 +3,23 @@ execute pathogen#infect()
 " Get the submodules:
 " git submodule update --init --recursive
 
+" Auto source vimrc after modification
+autocmd! bufwritepost .vimrc source %
+
+" Move up or down to next non-whitespace character
+function! FindNonWhite(direction)
+    let oldsearch=@/
+    if a:direction == "up"
+        normal ?\%=virtcol(".")v\S
+    endif
+    if a:direction == "down"
+        normal /\%=virtcol(".")v\S
+    endif
+    let @/=oldsearch
+endfunction
+nnoremap cd :call FindNonWhite("down")<CR>
+nnoremap cu :call FindNonWhite("up")<CR>
+
 " allow buffers to be unopened and modified set hidden
 set hidden
 
@@ -51,8 +68,8 @@ nnoremap ; :
 vnoremap ; :
 
 " Use :SV and :SH to open buffers in new window
-command -nargs=1 -complete=buffer SV :vert sb
-command -nargs=1 -complete=buffer SH :sb
+command! -nargs=1 -complete=buffer SV :vert sb
+command! -nargs=1 -complete=buffer SH :sb
 
 " Provide path for jsl (will have to build manually)
 let g:syntastic_javascript_jsl_exec='~/.vim/my_stuff/jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl'
@@ -157,7 +174,7 @@ endfunction
 
 set showtabline=1  " 1 to show tabline only when more than one tab is present
 set tabline=%!MyTabLine()  " custom tab pages line
-function MyTabLine()
+function! MyTabLine()
         let s = '' " complete tabline goes here
         " loop through each tab page
         for t in range(tabpagenr('$'))
