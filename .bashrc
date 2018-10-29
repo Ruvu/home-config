@@ -11,6 +11,7 @@ alias gitl='git log'
 alias gitf='git fetch origin'
 alias gitm='git merge origin master'
 alias gitp='git push origin master'
+alias zim='python ~/apps/zim/zim.py'
 
 # Git completion
 source /etc/bash_completion.d/git
@@ -25,7 +26,9 @@ GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
 # Add /usr/local/lib to the library path
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}/usr/local/lib
+
+export ORACLE_PATH=${ORACLE_PATH+$ORACLE_PATH:}$HOME/.sqlplus
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
