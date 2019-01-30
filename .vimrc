@@ -6,6 +6,10 @@ execute pathogen#infect()
 " Auto source vimrc after modification
 autocmd! bufwritepost .vimrc source %
 
+" Leave insert mode with jk or kj
+:imap jk <ESC>
+:imap kj <ESC>
+
 " Move up or down to next non-whitespace character
 function! FindNonWhite(direction)
     let oldsearch=@/

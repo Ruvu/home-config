@@ -13,6 +13,8 @@ alias gitm='git merge origin master'
 alias gitp='git push origin master'
 alias zim='python ~/apps/zim/zim.py'
 
+export EDITOR=vim
+
 # Git completion
 source /etc/bash_completion.d/git
 
