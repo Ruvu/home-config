@@ -13,9 +13,6 @@ alias gitm='git merge origin master'
 alias gitp='git push origin master'
 alias zim='python ~/apps/zim/zim.py'
 
-# Git completion
-source /etc/bash_completion.d/git
-
 # Prompt
 #PS1="\u@\h \w > "
 # Git prompt
