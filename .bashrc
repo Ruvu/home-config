@@ -25,6 +25,12 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
+# The below conficts with git-prompt as they both modify PROMPT_COMMAND
+# See: https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
+# I want to keep git-prompt, hopefully this comment will help me solve
+# potential issues...
+#source /etc/profile.d/vte.sh
+
 # Add /usr/local/lib to the library path
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}/usr/local/lib
 
