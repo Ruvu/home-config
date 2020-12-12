@@ -1,6 +1,6 @@
 set feedback off
 set history on
-set pagesize 50000
+set pagesize 20000
 
 -- Set linesize to width of terminal
 HOST echo "set linesize" $(stty -a|head -n1|cut -f7 -d' '|cut -f1 -d';') > .tmp.sql
